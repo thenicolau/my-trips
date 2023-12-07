@@ -6,6 +6,7 @@ import { GET_PLACES } from "@/graphql/queries";
 import LinkWrapper from "@/components/LinkWrapper";
 import dynamic from "next/dynamic";
 import { MapProps } from "@/components/Map";
+
 const Map = dynamic(() => import("@/components/Map"), { ssr: false });
 const getPlaces = async () => {
   const { places } = await client.request<GetPlacesQuery>(GET_PLACES);
